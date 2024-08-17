@@ -9,6 +9,7 @@
 
 body {
     font-family: "Raleway", sans-serif;
+    max-width: 1440px;
 }
 
 html {
@@ -28,3 +29,118 @@ p {
     width: 400px;
     margin: auto 0;
 }
+
+
+/* HEADER */
+
+
+nav, 
+.nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181, 181, 181);
+}
+
+/* SECTIONS */
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+#hero {
+    display: flex;
+    justify-content: center;
+}
+
+.section-content {
+    margin-top: 10rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+p {
+    text-align: center;
+}
+
+footer {
+    height: 10vh;
+    margin: 0.1rem;
+  }
+
+  footer p {
+    text-align: center;
+  }
+
+/* ZTM */
+
+  .spacer {
+    height: 20vh;
+  }
+
+  #print_JS p {
+    text-align: start;
+  }
+
+  .input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  textarea {
+    font-weight: 300;
+    padding: 1rem;
+    width: 70%;
+    height: 10rem;
+    border-radius: 1rem;
+  }
+
+  button {
+    margin: auto;
+    font-weight: 300;
+    padding: 1rem;
+    width: 10rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    background: rgb(255, 255, 255);
+  }
+
+  button:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+    cursor: pointer;
+  }
