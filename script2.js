@@ -1,41 +1,11 @@
-console.log('1');
-setTimeout(() => {
-    console.log('2');
-}, 2000)
-console.log('3');
-
-console.log('1');
-// CALL STACK
+const button = document.getElementById("button");
+const inputContent =document.getElementById("text-input").innerText
 
 
-
-//WEB API
-
-
-//CALLBACK QUEUE
-
-
-//EVENT LOOP
-
-
-
-
-
-
-
-
-
-
-const test = "wow"
-console.log('test');
-
-
-const test = "wow"
-console.log('test');
-
-
-const test = "wow"
-console.log('fasdfasdft');
+button.addEventListener("click", (inputContent) =>
+    console.log("inputContent")
+ )
+    
 
 
 
