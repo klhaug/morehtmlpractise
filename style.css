@@ -10,6 +10,7 @@
 body {
     font-family: "Raleway", sans-serif;
     max-width: 1440px;
+    margin: auto;
 }
 
 html {
@@ -68,7 +69,6 @@ a:hover {
 
 section {
     padding-top: 4vh;
-    height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -94,8 +94,8 @@ p {
 }
 
 footer {
-    height: 10vh;
-    margin: 0.1rem;
+    height: 4rem;
+    margin-top: 2rem;
   }
 
   footer p {
@@ -118,6 +118,7 @@ footer {
     gap: 2rem;
     justify-content: space-between;
     align-items: center;
+    margin-top: 5rem;
   }
 
   textarea {
@@ -143,4 +144,12 @@ footer {
     background: rgb(53, 53, 53);
     color: white;
     cursor: pointer;
+  }
+
+  #print-area-container {
+    border: rgb(53, 53, 53) 1px solid;
+    border-radius: 1rem;
+    margin-top: 4rem;
+    height: 50vh;
+    margin-bottom: 1rem;
   }
