@@ -38,10 +38,6 @@ const test = "wow"
 console.log('test');
 
 
-const test = "wow"
-console.log('test');
-
-
 
 
 
