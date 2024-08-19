@@ -18,7 +18,7 @@ html {
 }
 
 p {
-    color: rgb(85, 85, 85);
+    color: #212121;
 }
 
 
@@ -80,17 +80,26 @@ section {
 }
 
 .section-content {
-    margin-top: 10rem;
+    margin: 10rem;
 }
 
 h1 {
     font-size: 3rem;
     text-align: center;
     letter-spacing: 4px;
+    margin-top: 1rem;
 }
 
 p {
     text-align: center;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+}
+.hero-img {
+  height: 400px;
 }
 
 footer {
