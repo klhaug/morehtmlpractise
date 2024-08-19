@@ -1,18 +1,44 @@
 const button = document.getElementById("button");
 const inputContent =document.getElementById("text-input").innerText
+let testP = document.getElementById("p-1");
 
 
-button.addEventListener("click", (inputContent) =>
-    console.log("inputContent")
- )
     
 
 
+//SCOPES//
+// Hvor er variablene tilgjengelige?
+
+const a = 5;
+
+const consoleLog = () => {
+    const c = 10;
+    console.log(c);
+}
+
+consoleLog();
+const c = 10;
+
+console.log("consolelog", c)
+
+//Ternary Operator
+
+const isUserValid = (bool) => bool;
+let answer = isUserValid(false) ? "1234" : "Access deniued";
+let automatedAnswer = "Your account # is " + answer;
+
+console.log(automatedAnswer);
+
+const myButtonPrompt = () => {
+    let userName = prompt("Please enter username", '')
+    let isUserNameEntered = userName !== null && userName.trim() !== '' ? userName : "Please enter valid username"
+    testP.innerText = isUserNameEntered
+}
 
 
 
 
-
+button.addEventListener("click", (myButtonPrompt))
 
 
 
@@ -132,3 +158,10 @@ button.addEventListener("click", (inputContent) =>
 //             return accumulator.concat(array)
 //         },[]);
     
+// let userName = prompt('Please enter username', '');
+// let consoleLog2 = 
+//     userName === null || 
+//     userName.trim() === '' ? 
+//     "Please enter username" : userName ;
+//     testP.innerText = consoleLog2
+// }
