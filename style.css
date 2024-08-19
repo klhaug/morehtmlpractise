@@ -130,12 +130,13 @@ footer {
     margin-top: 5rem;
   }
 
-  textarea {
+#text-input {
     font-weight: 300;
     padding: 1rem;
     width: 70%;
     height: 10rem;
     border-radius: 1rem;
+    font-size: 2rem;
   }
 
   button {
@@ -163,3 +164,19 @@ footer {
     margin-bottom: 1rem;
     padding: 2rem;
   }
+
+::placeholder {
+  color:
+}
+
+//REGISTER
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-line {
+  margin-bottom: 1rem;
+  width: 100px;
+}

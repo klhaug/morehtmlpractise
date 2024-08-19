@@ -1,33 +1,30 @@
+//UNDERSTAND, PLAN, DIVIDE
+
 const button = document.getElementById("button");
-const inputContent =document.getElementById("text-input").innerText
+const inputContent = document.getElementById("text-input").innerHTML;
 let testP = document.getElementById("p-1");
 
-
+console.log(inputContent);
     
 
 
 //SCOPES//
 // Hvor er variablene tilgjengelige?
 
-const a = 5;
+    const a = 5;
 
-const consoleLog = () => {
+    const consoleLog = () => {
+        const c = 10;
+        console.log(c);
+    }
+
+    consoleLog();
     const c = 10;
-    console.log(c);
-}
 
-consoleLog();
-const c = 10;
-
-console.log("consolelog", c)
+    console.log("consolelog", c)
 
 //Ternary Operator
 
-const isUserValid = (bool) => bool;
-let answer = isUserValid(false) ? "1234" : "Access deniued";
-let automatedAnswer = "Your account # is " + answer;
-
-console.log(automatedAnswer);
 
 const myButtonPrompt = () => {
     let userName = prompt("Please enter username", '')
@@ -36,14 +33,33 @@ const myButtonPrompt = () => {
 }
 
 
+// UNDERSTAND
+// Jeg skal koble opp et input-felt med en knapp, og få verdien fra inputfeltet til å legge seg til som en ny <p> i tekstboksen. 
+// 1. Skrive i inputfeltet
+// 2. Knappen lager en ny <p>, legger til verdien fra inputfeltet i den <p>
+// 3. Den nye <p> med verdi lagt seg til legges inn i boksen. 
 
+//PLAN
+
+//1. Finn ut hvordan jeg får tak i verdien fra inputfeltet. 
+//2. Finn ut hvordan man lager et nytt element
+//3. Finn ut hvordan man legger til inputfelt-verdien i elementet
+//4. Finn ut hvordan man appender det elementet riktig
 
 button.addEventListener("click", (myButtonPrompt))
 
 
 
 
+const checkArray = [1, 0, 2, 4 ];
+console.log(checkArray);
 
+const checkObject = {
+    name: "Kristian",
+    age: 27,
+    gender: "male",
+    funny: true
+}
 
 
 
