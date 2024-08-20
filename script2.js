@@ -1,10 +1,33 @@
 //UNDERSTAND, PLAN, DIVIDE
 
 const button = document.getElementById("button");
-const inputContent = document.getElementById("text-input").innerHTML;
-let testP = document.getElementById("p-1");
+const userInput = document.getElementById("user-input");
+const ul = document.getElementById("print-area-container");
 
-console.log(inputContent);
+const inputLength = () => userInput.value.length;
+const createListElement = () => {
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(userInput.value));
+    ul.appendChild(li);
+    li.classList.add("li-style");
+    userInput.value = "";
+}
+
+const addListAfterClick = () => {
+    if (inputLength() > 0) {
+    createListElement();
+    }
+}
+
+const addListAfterKeyPress = (event) => {
+        if (inputLength() > 0 && event.key === "Enter") {
+        createListElement();
+        }
+}
+
+button.addEventListener("click", addListAfterClick);
+
+userInput.addEventListener("keypress", addListAfterKeyPress);
     
 
 
@@ -46,7 +69,6 @@ const myButtonPrompt = () => {
 //3. Finn ut hvordan man legger til inputfelt-verdien i elementet
 //4. Finn ut hvordan man appender det elementet riktig
 
-button.addEventListener("click", (myButtonPrompt))
 
 
 
