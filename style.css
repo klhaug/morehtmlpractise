@@ -128,41 +128,55 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-top: 5rem;
+    
   }
 
-#text-input {
+#user-input {
+    box-sizing: border-box;
     font-weight: 300;
     padding: 1rem;
     width: 70%;
-    height: 10rem;
-    border-radius: 1rem;
-    font-size: 2rem;
+    height: 5rem;
+    background-color: rgba(128, 128, 128, 0.047);
+    outline: 0;
+    font-size: 1rem;
+    box-shadow: 2px 2px 2px rgb(53, 53, 53);
   }
 
   button {
+    box-sizing: border-box;
     margin: auto;
     font-weight: 300;
+    font-size: 1rem;
     padding: 1rem;
     width: 10rem;
     height: 5rem;
-    border-radius: 1rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     background: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px rgb(53, 53, 53);
   }
 
   button:hover {
     background: rgb(53, 53, 53);
     color: white;
     cursor: pointer;
+    
   }
 
+  .li-style {
+    list-style: none;
+    font-size: 1rem;
+  }
   #print-area-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 10rem;
     border: rgb(53, 53, 53) 1px solid;
     border-radius: 1rem;
     margin-top: 4rem;
-    height: 50vh;
     margin-bottom: 1rem;
     padding: 2rem;
+    box-shadow: 2px 2px 2px rgb(53, 53, 53);
   }
 
 ::placeholder {
