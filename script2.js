@@ -1,34 +1,36 @@
-//UNDERSTAND, PLAN, DIVIDE
-
 const button = document.getElementById("button");
 const userInput = document.getElementById("user-input");
-const ul = document.getElementById("print-area-container");
+const printArea = document.getElementById("print-area");
 
-const inputLength = () => userInput.value.length;
-const createListElement = () => {
-    let li = document.createElement("li");
-    li.appendChild(document.createTextNode(userInput.value));
-    ul.appendChild(li);
-    li.classList.add("li-style");
-    userInput.value = "";
-}
+const createNewListElement = () => {
+    const newListContainer = document.createElement("div");    
+    const newListElement = document.createElement("li");
+    const newTextNode = document.createTextNode(userInput.value);
+    const newButton = document.createElement("button");
+    const newButtonText = document.createTextNode("DELETE");
 
-const addListAfterClick = () => {
-    if (inputLength() > 0) {
-    createListElement();
-    }
-}
+        newListContainer.appendChild(newListElement);
+        newListContainer.appendChild(newButton);
+        newListElement.appendChild(newTextNode);
+        newButton.appendChild(newButtonText);
+        printArea.appendChild(newListContainer);
+        newListElement.classList.add("li-style");
+        newListContainer.classList.add("list-container");
+        newButton.setAttribute("id", "del-button");
+        userInput.value = "";
 
-const addListAfterKeyPress = (event) => {
-        if (inputLength() > 0 && event.key === "Enter") {
-        createListElement();
-        }
-}
-
-button.addEventListener("click", addListAfterClick);
-
-userInput.addEventListener("keypress", addListAfterKeyPress);
     
+    newButton.addEventListener("click", () => {
+        const parentElement = newButton.parentElement
+        parentElement.remove();
+})
+}
+ 
+button.addEventListener("click", () => {
+    if (userInput.value.length > 0) 
+        createNewListElement()
+})
+
 
 
 //SCOPES//
@@ -203,3 +205,36 @@ const checkObject = {
 //     "Please enter username" : userName ;
 //     testP.innerText = consoleLog2
 // }
+
+
+
+
+// const button = document.getElementById("button");
+// const userInput = document.getElementById("user-input");
+// const ul = document.getElementById("print-area-container");
+
+// const inputLength = () => userInput.value.length;
+// const createListElement = () => {
+//     let li = document.createElement("li");
+//     li.appendChild(document.createTextNode(userInput.value));
+//     ul.appendChild(li);
+//     li.classList.add("li-style");
+//     userInput.value = "";
+// }
+
+// const addListAfterClick = () => {
+//     if (inputLength() > 0) {
+//     createListElement();
+//     }
+// }
+
+// const addListAfterKeyPress = (event) => {
+//         if (inputLength() > 0 && event.key === "Enter") {
+//         createListElement();
+//         }
+// }
+
+// button.addEventListener("click", addListAfterClick);
+
+// userInput.addEventListener("keypress", addListAfterKeyPress);
+    
