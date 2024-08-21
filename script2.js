@@ -66,10 +66,9 @@ userInput.addEventListener("keydown", (event) => {
 //GAME
 
 // DOM CHACHE
-const gameElement = document.getElementsByClassName("block")[0];
+let gameElement = document.getElementsByClassName("block")[0];
 const characterCreationForm = document.getElementById("character-creation-form");
 
-console.log(characterCreationForm);
 
 characterCreationForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -80,6 +79,7 @@ characterCreationForm.addEventListener("submit", (event) => {
     const formObject = Object.fromEntries(formData.entries());
 
     console.log(formObject);
+    gameElement.character = formObject;
 });
 
 
