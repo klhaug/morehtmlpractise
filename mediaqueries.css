@@ -1,0 +1,31 @@
+@media screen and (max-width: 600px) {
+    #todo-section{
+        min-width: 343px;
+        padding: 1rem;
+        margin: auto 1rem;
+    }
+    #nav {
+        min-width: 343px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #todo-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .input-container {
+        margin-top: 4rem;
+    }
+    #user-input {
+        width: 320px;
+    }
+
+    footer {
+        min-width: 343px;
+    }
+}

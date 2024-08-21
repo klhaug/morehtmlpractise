@@ -65,11 +65,16 @@ a:hover {
     text-decoration-color: rgb(181, 181, 181);
 }
 
-/* SECTIONS */
+/* TODO */
 
-section {
+#todo-section {
+    background: rgba(128, 128, 128, 0.156);
+    padding: 4rem;
     padding-top: 4vh;
     margin: 0 10rem;
+    border-radius: 1rem;
+    border-style: solid;
+    box-shadow: 2px 2px 2px #212121;
     margin: clamp(1rem, 2rem, 3rem);
     box-sizing: border-box;
     min-height: fit-content;
@@ -85,7 +90,7 @@ section {
 }
 
 h1 {
-    font-size: clamp(2rem, 3rem, 4rem);
+    font-size: 4rem;
     text-align: center;
     letter-spacing: 4px;
     margin-top: 1rem;
@@ -137,11 +142,12 @@ footer {
     box-sizing: border-box;
     font-weight: 300;
     padding: 1rem;
-    width: clamp(250px, 70%, 600px);
+    width: 70%;
     height: 5rem;
-    background-color: rgba(128, 128, 128, 0.047);
+    background-color: #fdfdfd;
     outline: 0;
     font-size: 1rem;
+    border: 1px solid rgb(53, 53, 53);
     /* box-shadow: 2px 2px 2px rgb(53, 53, 53); */
   }
 
@@ -152,14 +158,14 @@ footer {
     border-radius: 4rem;
     font-size: 1rem;
     padding: 1rem;
-    width: clamp(10rem, 20rem, 30rem) ;
+    width: 320px ;
     height: 5rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     background: rgb(255, 255, 255);
     box-shadow: 2px 2px 2px rgb(53, 53, 53);
   }
 
-  #button:hover {
+  #button:hover, #button:focus {
     transition: 200ms;
     background: rgb(53, 53, 53);
     color: white;
@@ -174,20 +180,34 @@ footer {
     display: flex;
     align-items: center;
   }
+
   #print-area-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 10rem;
-    max-height: clamp(100px, 20rem, 20rem);
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+    height: 250px;
     border: rgb(53, 53, 53) 1px solid;
-    /* border-radius: 1rem; */
     margin-top: 4rem;
     margin-bottom: 1rem;
     padding: 2rem;
-    overflow: scroll
+    scrollbar-gutter: stable;
+    overflow: auto;
     /* box-shadow: 2px 2px 2px rgb(53, 53, 53); */
   }
 
+  #print-area {
+  }
+
+  #archive-area-container {
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+    height: 250px;
+    border: rgb(53, 53, 53) 1px solid;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    scrollbar-gutter: stable;
+    overflow: auto;
+  }
   
 
 ::placeholder {
@@ -217,7 +237,7 @@ transition: 200ms;
   color: white;
 }
 
-//REGISTER
+/* //REGISTER */
 
 form {
   display: flex;
@@ -228,3 +248,87 @@ form {
   margin-bottom: 1rem;
   width: 100px;
 }
+
+/* //GAME */
+
+.my-first-game-title {
+  margin-bottom: 20px;
+}
+
+#game-section{
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-board-container {
+  box-sizing: border-box;
+  position: relative;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr); */
+  border: solid 1px rgb(53, 53, 53);
+  height: 600px;
+  width: 600px;
+}
+
+.block {
+  box-sizing: border-box;
+  height: 180px;
+  width: 180px;
+  margin: 10px;
+  border: solid 1px rgb(53, 53, 53);
+  background-color: green;
+  border-radius: 5px;
+  position: absolute;
+  /* left: 200px ; */
+}
+
+.one {
+  transition: 300ms ease-in-out;
+  left: 0px;
+}
+
+.two {
+  transition: 300ms ease-in-out;
+  left: 200px;
+}
+
+.three {
+  transition: 300ms ease-in-out;
+  left: 400px;
+}
+
+.four {
+  transition: 300ms ease-in-out;
+  top: 200px;
+}
+.five {
+  transition: 300ms ease-in-out;
+  top: 200px;
+  left: 200px;
+}
+.six {
+  transition: 300ms ease-in-out;
+  top: 200px;
+  left: 400px;
+}
+
+.seven {
+  transition: 300ms ease-in-out;
+  top: 400px;
+}
+
+.eight {
+  transition: 300ms ease-in-out;
+  top: 400px;
+  left: 200px;
+}
+
+.nine {
+  transition: 300ms ease-in-out;
+  top: 400px;
+  left: 400px;
+}
+

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="mediaqueries.css" type="text/css" rel="stylesheet">
     <title>ZTM</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
             </ul>
         </nav>
     </header>
-    <section>
+    <section id="todo-section">
         <h1>HTML, CSS & Javascript?</h1>
         <div class="input-container">
             <input id= "user-input"type="text" id="text-input" name="input-field" placeholder="enter text here" rows="5" cols="33" maxlength="50">
@@ -26,10 +27,20 @@
         </div>
         <div id="print-area-container">
             <ul id="print-area">
-
             </ul>
         </div>
-        
+        <div id="archive-area-container">
+            <ul id="archive-area">
+                <p>archive</p>
+                <p>currently not working</p>
+            </ul>
+        </div>
+    </section>
+    <section id="game-section">
+        <p class="my-first-game-title">My first game</p>
+        <div class="game-board-container">
+            <div class="block one "></div>
+        </div>
     </section>
     <footer>
         <p>Copyright &#169; 2024 Kristian Haug. All Rights Reserved</p>
