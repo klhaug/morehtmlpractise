@@ -251,6 +251,16 @@ form {
 
 /* //GAME */
 
+ #character-creation-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #C9F0FF;
+  border: solid 1px rgb(53, 53, 53);
+  box-shadow: 2px 2px 2px rgb(53, 53, 53);
+}
+
 .my-first-game-title {
   margin-bottom: 20px;
 }
@@ -259,30 +269,75 @@ form {
   margin-top: 10rem;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
 }
+
+.game-submit-button {
+  transition: 200ms ease-in-out;
+  grid-column: 1 / 3;
+  height: 40px;
+  border-radius: 16px;
+  border: solid 1px black;
+  background-color: #00B85C;
+  color: black;
+}
+
+.game-submit-button:hover {
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+  scale: 1.05;
+}
+
+.game-reset-button {
+  transition: 200ms ease-in-out;
+  grid-column: 1 / 3;
+  height: 40px;
+  border-radius: 16px;
+  border: solid 1px rgb(53, 53, 53);
+  background-color: rgba(128, 128, 128, 0.329);
+}
+
+.game-reset-button:hover {
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+  background-color: red;
+  font-weight: bold;
+  color: white;
+}
+
 
 .game-board-container {
   box-sizing: border-box;
   position: relative;
+  background-color: #EAFFFD;
   /* display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr); */
   border: solid 1px rgb(53, 53, 53);
   height: 600px;
   width: 600px;
+  box-shadow: 2px 2px 2px rgb(53, 53, 53);
 }
 
 .block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   height: 180px;
   width: 180px;
   margin: 10px;
   border: solid 1px rgb(53, 53, 53);
-  background-color: green;
-  border-radius: 5px;
+  background-color: #EFEFF0;
+  border-radius: 4px;
   position: absolute;
+  box-shadow: 2px 2px 2px rgb(53, 53, 53);
   /* left: 200px ; */
+}
+
+.block:hover{
+  background-color: #D5CAD6;
 }
 
 .one {
@@ -311,8 +366,8 @@ form {
 }
 .six {
   transition: 300ms ease-in-out;
-  top: 200px;
   left: 400px;
+  top: 200px;
 }
 
 .seven {

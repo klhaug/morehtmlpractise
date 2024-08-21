@@ -1,3 +1,4 @@
+history.scrollRestoration = "manual"
 // Cache DOM Elements
 const button = document.getElementById("button");
 const userInput = document.getElementById("user-input");
