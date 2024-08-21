@@ -1,4 +1,4 @@
-history.scrollRestoration = "manual"
+
 // Cache DOM Elements
 const button = document.getElementById("button");
 const userInput = document.getElementById("user-input");
@@ -65,8 +65,24 @@ userInput.addEventListener("keydown", (event) => {
 
 //GAME
 
+// DOM CHACHE
 const gameElement = document.getElementsByClassName("block")[0];
-console.log(gameElement);
+const characterCreationForm = document.getElementById("character-creation-form");
+
+console.log(characterCreationForm);
+
+characterCreationForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const formObject = Object.fromEntries(formData.entries());
+
+    console.log(formObject);
+});
+
+
 
 gameElement.addEventListener("click", () => {
     const boxClass = gameElement.classList[1];
@@ -114,8 +130,3 @@ gameElement.addEventListener("click", () => {
 
 })
 
-// gameElement.addEventListener("click", () => {
-//     if (gameElement.classList[1] === "two") 
-//      {   gameElement.classList.remove("two");
-//          gameElement.classList.add("one")};
-//  })
