@@ -239,14 +239,14 @@ transition: 200ms;
 
 /* //REGISTER */
 
-form {
+.register-form-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .form-line {
   margin-bottom: 1rem;
-  width: 100px;
+  width: 200px;
 }
 
 /* //GAME */

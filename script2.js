@@ -129,4 +129,3 @@ gameElement.addEventListener("click", () => {
     }
 
 })
-
