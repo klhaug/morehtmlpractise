@@ -66,9 +66,9 @@ userInput.addEventListener("keydown", (event) => {
 //GAME
 
 // DOM CHACHE
-let gameElement = document.getElementsByClassName("block")[0];
+const gameElement = document.getElementsByClassName("block")[0];
 const characterCreationForm = document.getElementById("character-creation-form");
-
+const gameSection = document.getElementById("game-section");
 
 characterCreationForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -82,50 +82,186 @@ characterCreationForm.addEventListener("submit", (event) => {
     gameElement.character = formObject;
 });
 
+//CHARACTER MOVEMENT WITH ARROW KEYS
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+        const boxClass = gameElement.classList[1];
+        
+        switch(boxClass) {
+            case "one":
+                gameElement.classList.remove("one")
+                gameElement.classList.add("two")
+                break;
+            case "two":
+                gameElement.classList.remove("two")
+                gameElement.classList.add("three")
+                break;
+            case "three":
+                alert("Move back sir");
+                break;
+            case "four":
+                gameElement.classList.remove("four")
+                gameElement.classList.add("five")
+                break;
+            case "five":
+                gameElement.classList.remove("five")
+                gameElement.classList.add("six")
+                break;
+            case "six":
+                alert("Move back sir");
+                break;
+            case "seven":
+                gameElement.classList.remove("seven")
+                gameElement.classList.add("eight")
+                break;
+            case "eight":
+                gameElement.classList.remove("eight")
+                gameElement.classList.add("nine")
+                break;
+            case "nine":
+                alert("Move back sir");
+                break;
+            default: 
+                console.log("somethings wrong")
+        }
+        }
+
+    })
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+        const boxClass = gameElement.classList[1];
+        
+        switch(boxClass) {
+            case "one":
+                alert("Move back sir");
+                break;
+            case "two":
+                gameElement.classList.remove("two")
+                gameElement.classList.add("one")
+                break;
+            case "three":
+                gameElement.classList.remove("three")
+                gameElement.classList.add("two")
+                break;
+            case "four":
+                alert("Move back sir");
+                break;
+            case "five":
+                gameElement.classList.remove("five")
+                gameElement.classList.add("four")
+                break;
+            case "six":
+                gameElement.classList.remove("six")
+                gameElement.classList.add("five")
+                break;
+            case "seven":
+                alert("Move back sir");
+                break;
+            case "eight":
+                gameElement.classList.remove("eight")
+                gameElement.classList.add("seven")
+                break;
+            case "nine":
+                gameElement.classList.remove("nine")
+                gameElement.classList.add("eight")
+                break;
+            default: 
+                console.log("somethings wrong")
+        }
+        }
+
+    })
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowDown") {
+        const boxClass = gameElement.classList[1];
+        
+        switch(boxClass) {
+            case "one":
+                gameElement.classList.remove("one")
+                gameElement.classList.add("four")
+                break;
+            case "two":
+                gameElement.classList.remove("two")
+                gameElement.classList.add("five")
+                break;
+            case "three":
+                gameElement.classList.remove("three")
+                gameElement.classList.add("six")
+                break;
+            case "four":
+                gameElement.classList.remove("four")
+                gameElement.classList.add("seven")
+                break;
+            case "five":
+                gameElement.classList.remove("five")
+                gameElement.classList.add("eight")
+                break;
+            case "six":
+                gameElement.classList.remove("six")
+                gameElement.classList.add("nine")
+                break;
+            case "seven":
+                alert("Move back sir");
+                break;
+            case "eight":
+                alert("Move back sir");
+                break;
+            case "nine":
+                alert("Move back sir");
+                break;
+            default: 
+                console.log("somethings wrong")
+        }
+        }
+
+    })
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowUp") {
+        const boxClass = gameElement.classList[1];
+        
+        switch(boxClass) {
+            case "one":
+                alert("Move back sir");
+                break;
+            case "two":
+                alert("Move back sir");
+                break;
+            case "three":
+                alert("Move back sir");
+                break;
+            case "four":
+                gameElement.classList.remove("four")
+                gameElement.classList.add("one")
+                break;
+            case "five":
+                gameElement.classList.remove("five")
+                gameElement.classList.add("two")
+                break;
+            case "six":
+                gameElement.classList.remove("six")
+                gameElement.classList.add("three")
+                break;
+            case "seven":
+                gameElement.classList.remove("seven")
+                gameElement.classList.add("four")
+                break;
+            case "eight":
+                gameElement.classList.remove("eight")
+                gameElement.classList.add("five")
+                break;
+            case "nine":
+                gameElement.classList.remove("nine")
+                gameElement.classList.add("six")
+                break;
+            default: 
+                console.log("somethings wrong")
+        }
+        }
+
+    })
 
 
-gameElement.addEventListener("click", () => {
-    const boxClass = gameElement.classList[1];
-    
-    switch(boxClass) {
-        case "one":
-            gameElement.classList.remove("one")
-            gameElement.classList.add("two")
-            break;
-        case "two":
-            gameElement.classList.remove("two")
-            gameElement.classList.add("three")
-            break;
-        case "three":
-            gameElement.classList.remove("three")
-            gameElement.classList.add("four")
-            break;
-        case "four":
-            gameElement.classList.remove("four")
-            gameElement.classList.add("five")
-            break;
-        case "five":
-            gameElement.classList.remove("five")
-            gameElement.classList.add("six")
-            break;
-        case "six":
-            gameElement.classList.remove("six")
-            gameElement.classList.add("seven")
-            break;
-        case "seven":
-            gameElement.classList.remove("seven")
-            gameElement.classList.add("eight")
-            break;
-        case "eight":
-            gameElement.classList.remove("eight")
-            gameElement.classList.add("nine")
-            break;
-        case "nine":
-            gameElement.classList.remove("nine")
-            gameElement.classList.add("one")
-            break;
-        default: 
-            console.log("somethings wrong")
-    }
-
-})
