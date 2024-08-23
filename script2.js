@@ -69,55 +69,103 @@ userInput.addEventListener("keydown", (event) => {
 const gameElement = document.getElementsByClassName("block")[0];
 const characterCreationForm = document.getElementById("character-creation-form");
 const gameSection = document.getElementById("game-section");
+const gameBoardContainer = document.getElementById ("game-board-container");
+
+let newGameElement;
 
 characterCreationForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    newGameElement = document.createElement("div");
+    newGameElement.classList.add("block")
+    newGameElement.classList.add("five")
+    gameBoardContainer.appendChild(newGameElement);
+    
+    
     const form = event.target;
     const formData = new FormData(form);
 
     const formObject = Object.fromEntries(formData.entries());
 
+
     console.log(formObject);
-    gameElement.character = formObject;
+    newGameElement.character = formObject;
+
+  
+
+    const emojiHeader = document.createElement("h1");
+    emojiHeader.classList = ("emoji-header");
+    const characterEmoji = document.createTextNode(newGameElement.character.emoji);
+    emojiHeader.appendChild(characterEmoji);
+    newGameElement.appendChild(emojiHeader);
+
+    const charAttContainer = document.createElement("ul");
+    charAttContainer.classList = ("char-att-container");
+    newGameElement.appendChild(charAttContainer);
+
+    const liName = document.createElement("li");
+    liName.classList = ("game-element-li");
+    const characterName = document.createTextNode("Name: " + newGameElement.character['character name'])
+    liName.appendChild(characterName);
+    charAttContainer.appendChild(liName);
+
+    const liClass = document.createElement("li");
+    liClass.classList = ("game-element-li");
+    const characterClass = document.createTextNode("Class: " + newGameElement.character.class)
+    liClass.appendChild(characterClass);
+    charAttContainer.appendChild(liClass);
+
+    const liSpecialMove = document.createElement("li");
+    liSpecialMove.classList = ("game-element-li");
+    const characterSpecialMove = document.createTextNode("Special Move: " + newGameElement.character['special move'])
+    liSpecialMove.appendChild(characterSpecialMove);
+    charAttContainer.appendChild(liSpecialMove);
+
+    const liActivateCommand = document.createElement("li");
+    liActivateCommand.classList = ("game-element-li");
+    const activateCommand = document.createTextNode("Activate Command: " + newGameElement.character['activate SM command'])
+    liActivateCommand.appendChild(activateCommand);
+    charAttContainer.appendChild(liActivateCommand);
+
+    
 });
 
 //CHARACTER MOVEMENT WITH ARROW KEYS
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "ArrowRight") {
-        const boxClass = gameElement.classList[1];
+        const boxClass = newGameElement.classList[1];
         
         switch(boxClass) {
             case "one":
-                gameElement.classList.remove("one")
-                gameElement.classList.add("two")
+                newGameElement.classList.remove("one")
+                newGameElement.classList.add("two")
                 break;
             case "two":
-                gameElement.classList.remove("two")
-                gameElement.classList.add("three")
+                newGameElement.classList.remove("two")
+                newGameElement.classList.add("three")
                 break;
             case "three":
                 alert("Move back sir");
                 break;
             case "four":
-                gameElement.classList.remove("four")
-                gameElement.classList.add("five")
+                newGameElement.classList.remove("four")
+                newGameElement.classList.add("five")
                 break;
             case "five":
-                gameElement.classList.remove("five")
-                gameElement.classList.add("six")
+                newGameElement.classList.remove("five")
+                newGameElement.classList.add("six")
                 break;
             case "six":
                 alert("Move back sir");
                 break;
             case "seven":
-                gameElement.classList.remove("seven")
-                gameElement.classList.add("eight")
+                newGameElement.classList.remove("seven")
+                newGameElement.classList.add("eight")
                 break;
             case "eight":
-                gameElement.classList.remove("eight")
-                gameElement.classList.add("nine")
+                newGameElement.classList.remove("eight")
+                newGameElement.classList.add("nine")
                 break;
             case "nine":
                 alert("Move back sir");
@@ -131,41 +179,41 @@ characterCreationForm.addEventListener("submit", (event) => {
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "ArrowLeft") {
-        const boxClass = gameElement.classList[1];
+        const boxClass = newGameElement.classList[1];
         
         switch(boxClass) {
             case "one":
                 alert("Move back sir");
                 break;
             case "two":
-                gameElement.classList.remove("two")
-                gameElement.classList.add("one")
+                newGameElement.classList.remove("two")
+                newGameElement.classList.add("one")
                 break;
             case "three":
-                gameElement.classList.remove("three")
-                gameElement.classList.add("two")
+                newGameElement.classList.remove("three")
+                newGameElement.classList.add("two")
                 break;
             case "four":
                 alert("Move back sir");
                 break;
             case "five":
-                gameElement.classList.remove("five")
-                gameElement.classList.add("four")
+                newGameElement.classList.remove("five")
+                newGameElement.classList.add("four")
                 break;
             case "six":
-                gameElement.classList.remove("six")
-                gameElement.classList.add("five")
+                newGameElement.classList.remove("six")
+                newGameElement.classList.add("five")
                 break;
             case "seven":
                 alert("Move back sir");
                 break;
             case "eight":
-                gameElement.classList.remove("eight")
-                gameElement.classList.add("seven")
+                newGameElement.classList.remove("eight")
+                newGameElement.classList.add("seven")
                 break;
             case "nine":
-                gameElement.classList.remove("nine")
-                gameElement.classList.add("eight")
+                newGameElement.classList.remove("nine")
+                newGameElement.classList.add("eight")
                 break;
             default: 
                 console.log("somethings wrong")
@@ -176,32 +224,32 @@ characterCreationForm.addEventListener("submit", (event) => {
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "ArrowDown") {
-        const boxClass = gameElement.classList[1];
+        const boxClass = newGameElement.classList[1];
         
         switch(boxClass) {
             case "one":
-                gameElement.classList.remove("one")
-                gameElement.classList.add("four")
+                newGameElement.classList.remove("one")
+                newGameElement.classList.add("four")
                 break;
             case "two":
-                gameElement.classList.remove("two")
-                gameElement.classList.add("five")
+                newGameElement.classList.remove("two")
+                newGameElement.classList.add("five")
                 break;
             case "three":
-                gameElement.classList.remove("three")
-                gameElement.classList.add("six")
+                newGameElement.classList.remove("three")
+                newGameElement.classList.add("six")
                 break;
             case "four":
-                gameElement.classList.remove("four")
-                gameElement.classList.add("seven")
+                newGameElement.classList.remove("four")
+                newGameElement.classList.add("seven")
                 break;
             case "five":
-                gameElement.classList.remove("five")
-                gameElement.classList.add("eight")
+                newGameElement.classList.remove("five")
+                newGameElement.classList.add("eight")
                 break;
             case "six":
-                gameElement.classList.remove("six")
-                gameElement.classList.add("nine")
+                newGameElement.classList.remove("six")
+                newGameElement.classList.add("nine")
                 break;
             case "seven":
                 alert("Move back sir");
@@ -221,7 +269,7 @@ characterCreationForm.addEventListener("submit", (event) => {
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "ArrowUp") {
-        const boxClass = gameElement.classList[1];
+        const boxClass = newGameElement.classList[1];
         
         switch(boxClass) {
             case "one":
@@ -234,28 +282,28 @@ characterCreationForm.addEventListener("submit", (event) => {
                 alert("Move back sir");
                 break;
             case "four":
-                gameElement.classList.remove("four")
-                gameElement.classList.add("one")
+                newGameElement.classList.remove("four")
+                newGameElement.classList.add("one")
                 break;
             case "five":
-                gameElement.classList.remove("five")
-                gameElement.classList.add("two")
+                newGameElement.classList.remove("five")
+                newGameElement.classList.add("two")
                 break;
             case "six":
-                gameElement.classList.remove("six")
-                gameElement.classList.add("three")
+                newGameElement.classList.remove("six")
+                newGameElement.classList.add("three")
                 break;
             case "seven":
-                gameElement.classList.remove("seven")
-                gameElement.classList.add("four")
+                newGameElement.classList.remove("seven")
+                newGameElement.classList.add("four")
                 break;
             case "eight":
-                gameElement.classList.remove("eight")
-                gameElement.classList.add("five")
+                newGameElement.classList.remove("eight")
+                newGameElement.classList.add("five")
                 break;
             case "nine":
-                gameElement.classList.remove("nine")
-                gameElement.classList.add("six")
+                newGameElement.classList.remove("nine")
+                newGameElement.classList.add("six")
                 break;
             default: 
                 console.log("somethings wrong")
@@ -263,5 +311,3 @@ characterCreationForm.addEventListener("submit", (event) => {
         }
 
     })
-
-

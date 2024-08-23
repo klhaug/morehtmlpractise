@@ -307,7 +307,7 @@ transition: 200ms;
 }
 
 
-.game-board-container {
+#game-board-container {
   box-sizing: border-box;
   position: relative;
   background-color: #EAFFFD;
@@ -322,6 +322,7 @@ transition: 200ms;
 
 .block {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -385,5 +386,16 @@ transition: 200ms;
   transition: 300ms ease-in-out;
   top: 400px;
   left: 400px;
+}
+
+.char-att-container {
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  width: 148px;
+}
+.game-element-li {
+  list-style: none;
+  font-size: 10px;
 }
 
