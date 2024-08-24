@@ -127,8 +127,42 @@ characterCreationForm.addEventListener("submit", (event) => {
     liActivateCommand.appendChild(activateCommand);
     charAttContainer.appendChild(liActivateCommand);
 
+    const chosenColor = newGameElement.character.color; 
+
+    newGameElement.style.backgroundColor = chosenColor;
     
 });
+
+
+// STEP COUNTER
+
+let counterValue = document.getElementById("counter-value");
+document.addEventListener("keydown", (event) => {
+    if(event.key === "ArrowRight" || event.key === "ArrowLeft" || event.key === "ArrowUp" || event.key === "ArrowDown") {
+        counterValue.innerText++;
+    }
+})
+
+//RESET STEP COUNTER WHEN HITTING THE WALL
+const originalAlert = window.alert;
+
+
+window.alert = (message) => {
+    counterValue.innerText = 0;
+    gameBoardContainer.style.borderColor = "#ff0000";
+    gameBoardContainer.style.borderWidth = "10px";
+    
+    setTimeout(() => {originalAlert(message)}, 20)
+    
+    
+    setTimeout(() => {
+        gameBoardContainer.style.borderColor = "#000000";
+        gameBoardContainer.style.borderWidth = "1px";
+    }, 500);
+}
+
+
+
 
 //CHARACTER MOVEMENT WITH ARROW KEYS
 
