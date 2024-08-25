@@ -144,8 +144,7 @@ document.addEventListener("keydown", (event) => {
 })
 
 //RESET STEP COUNTER WHEN HITTING THE WALL
-const originalAlert = window.alert;
-
+const originalAlert = window.alert
 
 window.alert = (message) => {
     counterValue.innerText = 0;
