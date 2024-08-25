@@ -389,3 +389,40 @@ window.alert = (message) => {
         }
 
     })
+
+//STOPWATCH//
+
+    let stopwatchElement = document.getElementById("stopwatch");
+    let startTime;
+    let elapsedTime = 0;
+    let stopwatchInterval;
+    
+    function startStopwatch() {
+        startTime = Date.now() - elapsedTime;
+        stopwatchInterval = setInterval(updateStopwatch, 10); // Update every 10 milliseconds
+    }
+    
+    function updateStopwatch() {
+        elapsedTime = Date.now() - startTime;
+    
+        let milliseconds = Math.floor((elapsedTime % 1000) / 10); // Display only two digits for milliseconds
+        let seconds = Math.floor((elapsedTime / 1000) % 60);
+        let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
+    
+        // Format the time
+        milliseconds = (milliseconds < 10) ? "0" + milliseconds : milliseconds;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+    
+        stopwatchElement.innerText = `${minutes}:${seconds}:${milliseconds}`;
+    }
+    
+    function stopStopwatch() {
+        clearInterval(stopwatchInterval);
+    }
+    
+    function resetStopwatch() {
+        clearInterval(stopwatchInterval);
+        elapsedTime = 0;
+        stopwatchElement.innerText = "00:00:00";
+    }
