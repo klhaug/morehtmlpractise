@@ -4,7 +4,6 @@ const button = document.getElementById("button");
 const userInput = document.getElementById("user-input");
 const printArea = document.getElementById("print-area");
 
-
 /** 
 * @param {HTMLElement} parent
 * @param {...HTMLElement} children 
@@ -137,17 +136,63 @@ characterCreationForm.addEventListener("submit", (event) => {
 // STEP COUNTER
 
 let counterValue = document.getElementById("counter-value");
+let counterValueInt = 0;
+
+let levelCounter = document.getElementById("level-counter").innerText;
+let levelCounterInt = parseInt(levelCounter);
+
+const winTitle = document.getElementById("winner-title");
+
+
 document.addEventListener("keydown", (event) => {
     if(event.key === "ArrowRight" || event.key === "ArrowLeft" || event.key === "ArrowUp" || event.key === "ArrowDown") {
         counterValue.innerText++;
+        counterValueInt++;
     }
+
+    if (counterValueInt === 50) {
+        let activateSM = prompt("Activate Special Move!")
+        if (activateSM === newGameElement.character["activate SM command"]) {
+            newGameElement.classList.remove(newGameElement.classList[1]);
+            newGameElement.classList.add("winner");
+            winTitle.classList.remove(winTitle.classList[0]);
+            
+        }
+        else {alert("Wrong command!")}
+
+    }
+    else if (counterValueInt >= 40) {
+        levelCounter = "5";
+        levelCounterInt = 5;
+    }
+    else if (counterValueInt >= 30) {
+        levelCounter = "4";
+        levelCounterInt = 4;
+    }
+    else if (counterValueInt >= 20) {
+        levelCounter = "3";
+        levelCounterInt = 3;
+    }
+    else if (counterValueInt > 10) {
+        levelCounter = "2";
+        levelCounterInt = 2;
+    }
+    else {
+        levelCounter = "1";
+        levelCounterInt = 2;
+    }
+
+    document.getElementById("level-counter").innerText = levelCounter;
+
 })
+
 
 //RESET STEP COUNTER WHEN HITTING THE WALL
 const originalAlert = window.alert
 
 window.alert = (message) => {
     counterValue.innerText = 0;
+    counterValueInt = 0;
     gameBoardContainer.style.borderColor = "#ff0000";
     gameBoardContainer.style.borderWidth = "10px";
     

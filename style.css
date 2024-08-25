@@ -387,6 +387,14 @@ transition: 200ms;
   left: 400px;
 }
 
+.winner {
+  transition: 3s;
+  margin: auto;
+  height: 600px;
+  width: 600px;
+  margin: 0;
+}
+
 .char-att-container {
   background-color: white;
   padding: 5px;
@@ -396,5 +404,9 @@ transition: 200ms;
 .game-element-li {
   list-style: none;
   font-size: 10px;
+}
+
+.hidden {
+  display: none;
 }
 
