@@ -69,6 +69,24 @@ const gameElement = document.getElementsByClassName("block")[0];
 const characterCreationForm = document.getElementById("character-creation-form");
 const gameSection = document.getElementById("game-section");
 const gameBoardContainer = document.getElementById ("game-board-container");
+const gameResetButton = document.getElementsByClassName("game-reset-button")[0];
+
+gameResetButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    stopStopwatch();
+    elapsedTime = 0;
+    stopwatchElement.innerText = "00:00:00";
+    counterValue.innerText = 0;
+    counterValueInt = 0;
+    levelCounter = "1";
+    levelCounterInt = 1;
+    winTitle.classList.add("hidden");
+
+
+    document.getElementById("level-counter").innerText = levelCounter;
+    newGameElement.remove(newGameElement);
+})
 
 let newGameElement;
 
@@ -150,12 +168,52 @@ document.addEventListener("keydown", (event) => {
         counterValueInt++;
     }
 
+
+
+
     if (counterValueInt === 50) {
         let activateSM = prompt("Activate Special Move!")
         if (activateSM === newGameElement.character["activate SM command"]) {
             newGameElement.classList.remove(newGameElement.classList[1]);
             newGameElement.classList.add("winner");
             winTitle.classList.remove(winTitle.classList[0]);
+            stopStopwatch();
+            const newUl = document.createElement("ul")
+            document.getElementById("leaderboard-container").appendChild(newUl);
+            const newLiContainer = document.createElement("div");
+           
+            newLiContainer.classList=("li-container");
+            newUl.appendChild(newLiContainer);
+           
+            const liName = document.createElement("li")
+            liName.appendChild(document.createTextNode(newGameElement.character["character name"]));
+            newLiContainer.appendChild(liName);
+            
+            const liClass = document.createElement("li")
+            liClass.appendChild(document.createTextNode(newGameElement.character.class));
+            newLiContainer.appendChild(liClass);
+            
+            const liEmoji = document.createElement("li")
+            liEmoji.appendChild(document.createTextNode(newGameElement.character.emoji));
+            newLiContainer.appendChild(liEmoji);
+         
+            const liColor = document.createElement("li")
+            liColor.appendChild(document.createTextNode(newGameElement.character.color));
+            newLiContainer.appendChild(liColor);
+            
+            const liSpecialMove = document.createElement("li")
+            liSpecialMove.appendChild(document.createTextNode(newGameElement.character["special move"]));
+            newLiContainer.appendChild(liSpecialMove);
+
+            const liCommand = document.createElement("li")
+            liCommand.appendChild(document.createTextNode(newGameElement.character["activate SM command"]));
+            newLiContainer.appendChild(liCommand);
+
+            const liTime = document.createElement("li")
+            liTime.appendChild(document.createTextNode(stopwatchElement.innerText));
+            newLiContainer.appendChild(liTime);
+
+
             
         }
         else {alert("Wrong command!")}
@@ -392,6 +450,7 @@ window.alert = (message) => {
 
 //STOPWATCH//
 
+    const submitButton = document.getElementsByClassName("game-submit-button")[0];
     let stopwatchElement = document.getElementById("stopwatch");
     let startTime;
     let elapsedTime = 0;
@@ -426,3 +485,5 @@ window.alert = (message) => {
         elapsedTime = 0;
         stopwatchElement.innerText = "00:00:00";
     }
+
+submitButton.addEventListener("click", startStopwatch);
