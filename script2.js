@@ -1,3 +1,48 @@
+//ARRAYS & OBECTS
+
+let array1 = [1,2,3,3,4,5,6,3,2,3,4,1,1,2,3,4,5,6,7,8,10,10,11,2,3];
+console.log(array1);
+
+
+
+let myToDoListPrivate = [];
+const addToDo = (task) => myToDoListPrivate.push(task); 
+
+
+const sortFunction = (a, b) => a - b;
+ 
+
+let words = [
+    "apple", "banana", "cherry", "date", "elderberry", 
+    "fig", "grape", "honeydew", "kiwi", "lemon", 
+  ];
+
+ let moreWords = ["mango", "nectarine", "orange", "papaya", "quince", 
+  "raspberry", "strawberry", "tangerine", "ugli", "vanilla", 
+  "watermelon", "xigua", "yam", "zucchini", "blueberry"];
+
+
+
+  for (let i = 0; i < array1.length; i++) {
+    console.log(array1[i] + " is a number" )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Cache DOM Elements
 const button = document.getElementById("button");
