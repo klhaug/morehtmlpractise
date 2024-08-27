@@ -1,30 +1,80 @@
+
+
+
 //ARRAYS & OBECTS
 
-let array1 = [1,2,3,3,4,5,6,3,2,3,4,1,1,2,3,4,5,6,7,8,10,10,11,2,3];
-console.log(array1);
+
+let array1 = [1,2,3,4,5,6,4,3,4,5,3,3,2,1,1,2,3,4,5,2,3,10,10,10,12,12];
+
+let array2 = [7,7,7,7,7,5,5,5,5,5,9,9,9,9];
+
+
+const sortArray = (a,b) => a - b;
+
+
+// for (let i = 0; i < array1.length; i++) {
+//     console.log(array1[i] + 0.2);
+// }
+
+let object1 = {
+    navn: "Kristian",
+    alder: 27,
+    kjønn: "Mænn",
+}
 
 
 
-let myToDoListPrivate = [];
-const addToDo = (task) => myToDoListPrivate.push(task); 
 
 
-const sortFunction = (a, b) => a - b;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let array1 = [1,2,3,3,4,5,6,3,2,3,4,1,1,2,3,4,5,6,7,8,10,10,11,2,3];
+// console.log(array1);
+
+
+
+// let myToDoListPrivate = [];
+// const addToDo = (task) => myToDoListPrivate.push(task); 
+
+
+// const sortFunction = (a, b) => a - b;
  
 
-let words = [
-    "apple", "banana", "cherry", "date", "elderberry", 
-    "fig", "grape", "honeydew", "kiwi", "lemon", 
-  ];
+// let words = [
+//     "apple", "banana", "cherry", "date", "elderberry", 
+//     "fig", "grape", "honeydew", "kiwi", "lemon", 
+//   ];
 
- let moreWords = ["mango", "nectarine", "orange", "papaya", "quince", 
-  "raspberry", "strawberry", "tangerine", "ugli", "vanilla", 
-  "watermelon", "xigua", "yam", "zucchini", "blueberry"];
+//  let moreWords = ["mango", "nectarine", "orange", "papaya", "quince", 
+//   "raspberry", "strawberry", "tangerine", "ugli", "vanilla", 
+//   "watermelon", "xigua", "yam", "zucchini", "blueberry"];
 
 
 
-  for (let i = 0; i < array1.length; i++) {
-    console.log(array1[i] + " is a number" )}
+//   for (let i = 0; i < array1.length; i++) {
+//     console.log(array1[i] + " is a number" )}
 
 
 
