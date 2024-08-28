@@ -29,25 +29,56 @@ let familyMember = {
     kjønn: "",
 }
 
+let kristianHaug = {...familyMember};
+kristianHaug.navn = "Kristian Haug";
+kristianHaug.alder = 27
+kristianHaug.kjønn = "Mænn"
+kristianHaug;
+
+let annikenLindbak = {...familyMember};
+annikenLindbak.navn = "Anniken Lindbak";
+annikenLindbak.alder = 30;
+annikenLindbak.kjønn = "Lady";
+annikenLindbak;
+
+let louisCat = {...familyMember};
+louisCat.navn = "Louis";
+louisCat.alder = 0.1;
+louisCat.kjønn = "Cat";
+louisCat
+
+let allFamilyMembers = [kristianHaug, annikenLindbak, louisCat];
+allFamilyMembers
 
 
+for (let i = 0; i < allFamilyMembers.length; i++) {
+console.log(allFamilyMembers[i].navn + " er " + allFamilyMembers[i].alder + " år!")
+}
 
+let name = 'jon snow'
 
+let obj = {
+    [name]: "hello",
+    ['ray' + ' smith']: "hihi"
+}
 
+obj
 
+console.log(obj['jon snow']);
+console.log(obj['ray smith']);
 
+const name2 = "Kristian"
+const alder = 34;
+const pet = "cat";
 
+const greetingBest = `Hello ${name2} you seem to be of age ${alder}. What a lovely ${pet} you have!`;
 
+greetingBest
 
-
-
-
-
-
-
-
-
-
+const greetingFunction = (name2=``, alder=30, pet=`cat`) => {
+    `Hello ${name2} you seem to be of age ${alder}. What a lovely ${pet} you have!`;
+}
+greetingFunction();
 
 
 
