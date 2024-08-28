@@ -23,7 +23,11 @@ let object1 = {
 }
 
 
-
+let familyMember = {
+    navn: "",
+    alder: undefined, 
+    kjønn: "",
+}
 
 
 
