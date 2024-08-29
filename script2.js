@@ -163,64 +163,159 @@ highestNumberArray4
 
 // ADVANCED OBJECTS
 
-class Family {
-    constructor(name, type, age) {
-        this.name = name;
-        this.type = type;
-        this.age = age;
-    }
-    introduce () {
-        console.log(`Hi I am ${this.name}, I'm a ${this.type}, and I'm ${this.age} old!`)
-    }
-}
 
-class FamilyMember extends Family {
-    constructor(name, type, age) {
-        super(name, type, age)
+class Flower {
+    constructor(plant, color, water) {
+    this.plant = plant;
+    this.color = color;
+    this.water = water;
     }
-    shout() {
-        console.log(`WOHOOOO I'M ALIVE! I'M ${this.name}, A GREAT ${this.type}, AND I'M GONNA LIVE TO BE A ${this.age}`)
+    whisper() {
+        console.log(`whoosh whoosh i'm a ${this.color} ${this.plant}, please water me ${this.water}!`)
     }
 }
 
-const kristian = new FamilyMember("Kristian", "Warrior", 110);
-kristian
-
-const anniken = new FamilyMember("Anniken", "Lover", 333);
-anniken
-
-const louis = new FamilyMember("Louis", "CatAssassin", 666);
-louis
-
-const allFamilyMembers666 = [kristian, anniken, louis];
-allFamilyMembers666
-
-let allFamilyMembers666Names = allFamilyMembers666.map(property => property.name)
-allFamilyMembers666Names
-
-allFamilyMembers666Names.sort()
-allFamilyMembers666Names
-
-const baby = new FamilyMember("unknown", "baby", undefined);
-baby
-
-allFamilyMembers666.push(baby);
-allFamilyMembers666
-
-const familyNamesSorted = (family) => {
-    const familyNames = family.map(property => property.name + " ❤️");
-     return familyNames.sort();
+class insideFlower extends Flower {
+    constructor(plant, color, water, light){
+        super(plant, color, water)
+        this.light = light;
+    }
+    pot() {
+        console.log("please give me a new pot every 6 months")
+    
+    }
 }
 
-console.log(familyNamesSorted(allFamilyMembers666));
+class outsideFlower extends Flower {
+    constructor(plant, color, water, earth) {
+        super(plant, color, water)
+        this.earth = earth;
+    }   
+    cut(day) {
+        console.log("please cut me once every " + day + " days")}
+}
 
-const sortFamilyAge = (family) => {
-    const familyAges = family.map(property => property.age);
-    const sortArrayFunction = (a, b) => a - b;
-    return familyAges.sort(sortArrayFunction);
-};
 
-console.log(sortFamilyAge(allFamilyMembers666));
+
+const peaceLily = new insideFlower("Peace Lily", "White", "Twice a week", "Indirect sunlight");
+const snakePlant = new insideFlower("Snake Plant", "Green", "Once every 2 weeks", "Low light");
+const fiddleLeafFig = new insideFlower("Fiddle Leaf Fig", "Dark Green", "Once a week", "Bright indirect light");
+const spiderPlant = new insideFlower("Spider Plant", "Variegated", "Twice a week", "Moderate light");
+const pothos = new insideFlower("Pothos", "Golden", "Once a week", "Low to bright indirect light");
+
+const roseBush = new outsideFlower("Rose Bush", "Red", "Thrice a week", "Rich soil");
+const oakTree = new outsideFlower("Oak Tree", "Green", "Once a month", "Deep, well-drained soil");
+const lavender = new outsideFlower("Lavender", "Purple", "Twice a week", "Well-drained sandy soil");
+const sunflower = new outsideFlower("Sunflower", "Yellow", "Daily", "Loamy soil");
+const mapleTree = new outsideFlower("Maple Tree", "Red", "Once a month", "Well-drained soil");
+
+const grass = new outsideFlower("Grass", "Green", "Not too much", "Soft");
+const tree = new outsideFlower("Gran", "Green", "Never", "Any");
+const alocasia = new insideFlower("Alocasia", "Green", "Once a week", "Place in window");
+
+let insidePlants = [peaceLily, snakePlant, fiddleLeafFig, spiderPlant, pothos, ];
+let outsidePlants = [roseBush, oakTree, lavender, sunflower, mapleTree];
+
+
+let ourPlants = [insidePlants, outsidePlants];
+console.log(ourPlants)
+
+const insidePlantsNames = insidePlants.map(property => property.plant)
+insidePlantsNames
+const insidePlantsNamesSorted = insidePlantsNames.sort()
+insidePlantsNamesSorted
+console.log(insidePlantsNamesSorted[1].length)
+const insidePlantsNamesLongest = insidePlantsNamesSorted.reduce((accumulator, name) => name.length > accumulator.length ? name : accumulator, insidePlantsNamesSorted[0]);
+insidePlantsNamesLongest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Family {
+//     constructor(name, type, age) {
+//         this.name = name;
+//         this.type = type;
+//         this.age = age;
+//     }
+//     introduce () {
+//         console.log(`Hi I am ${this.name}, I'm a ${this.type}, and I'm ${this.age} old!`)
+//     }
+// }
+
+// class FamilyMember extends Family {
+//     constructor(name, type, age) {
+//         super(name, type, age)
+//     }
+//     shout() {
+//         console.log(`WOHOOOO I'M ALIVE! I'M ${this.name}, A GREAT ${this.type}, AND I'M GONNA LIVE TO BE A ${this.age}`)
+//     }
+// }
+
+// const kristian = new FamilyMember("Kristian", "Warrior", 110);
+// kristian
+
+// const anniken = new FamilyMember("Anniken", "Lover", 333);
+// anniken
+
+// const louis = new FamilyMember("Louis", "CatAssassin", 666);
+// louis
+
+// const allFamilyMembers666 = [kristian, anniken, louis];
+// allFamilyMembers666
+
+// let allFamilyMembers666Names = allFamilyMembers666.map(property => property.name)
+// allFamilyMembers666Names
+
+// allFamilyMembers666Names.sort()
+// allFamilyMembers666Names
+
+// const baby = new FamilyMember("unknown", "baby", undefined);
+// baby
+
+// allFamilyMembers666.push(baby);
+// allFamilyMembers666
+
+// const familyNamesSorted = (family) => {
+//     const familyNames = family.map(property => property.name + " ❤️");
+//      return familyNames.sort();
+// }
+
+// console.log(familyNamesSorted(allFamilyMembers666));
+
+// const sortFamilyAge = (family) => {
+//     const familyAges = family.map(property => property.age);
+//     const sortArrayFunction = (a, b) => a - b;
+//     return familyAges.sort(sortArrayFunction);
+// };
+
+// console.log(sortFamilyAge(allFamilyMembers666));
 
 
 
