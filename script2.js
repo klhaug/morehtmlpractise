@@ -228,10 +228,20 @@ console.log(insidePlantsNamesSorted[1].length)
 const insidePlantsNamesLongest = insidePlantsNamesSorted.reduce((accumulator, name) => name.length > accumulator.length ? name : accumulator, insidePlantsNamesSorted[0]);
 insidePlantsNamesLongest
 
+let a = insidePlants.includes(snakePlant)
+console.log(a)
+
+let cardNumber = '123456789235';
+let cardNumberLength = cardNumber.length;
+cardNumberLength
+
+let slicedNumber = cardNumber.slice(0, 4);
+slicedNumber
+let anonymousNumber = slicedNumber.padEnd(cardNumber.length, "*")
+anonymousNumber
 
 
-
-
+console.log(Object.values(mapleTree))
 
 
 
