@@ -138,7 +138,7 @@ const capitalisedStringArray = stringArray.map(string => string.charAt(0).toUppe
 console.log(capitalisedStringArray);
 
 const evenArray = array4.filter(number => {
-    return number / 2
+    return number % 2 === 0
 })
 
 evenArray
@@ -153,21 +153,74 @@ const array4Sum = array4.reduce((accumulator, number) => {
 array4Sum;
 
 const highestNumberArray4 = array4.reduce((accumulator, number) => {
-    if (accumulator < number) {
-        accumulator = number
+    if (accumulator < number, accumulator = number) {
         return accumulator
-    }
+    } 
 }, 0)
-
 
 highestNumberArray4
 
 
+// ADVANCED OBJECTS
 
+class Family {
+    constructor(name, type, age) {
+        this.name = name;
+        this.type = type;
+        this.age = age;
+    }
+    introduce () {
+        console.log(`Hi I am ${this.name}, I'm a ${this.type}, and I'm ${this.age} old!`)
+    }
+}
 
+class FamilyMember extends Family {
+    constructor(name, type, age) {
+        super(name, type, age)
+    }
+    shout() {
+        console.log(`WOHOOOO I'M ALIVE! I'M ${this.name}, A GREAT ${this.type}, AND I'M GONNA LIVE TO BE A ${this.age}`)
+    }
+}
 
+const kristian = new FamilyMember("Kristian", "Warrior", 110);
+kristian
 
+const anniken = new FamilyMember("Anniken", "Lover", 333);
+anniken
 
+const louis = new FamilyMember("Louis", "CatAssassin", 666);
+louis
+
+const allFamilyMembers666 = [kristian, anniken, louis];
+allFamilyMembers666
+
+let allFamilyMembers666Names = allFamilyMembers666.map(property => property.name)
+allFamilyMembers666Names
+
+allFamilyMembers666Names.sort()
+allFamilyMembers666Names
+
+const baby = new FamilyMember("unknown", "baby", undefined);
+baby
+
+allFamilyMembers666.push(baby);
+allFamilyMembers666
+
+const familyNamesSorted = (family) => {
+    const familyNames = family.map(property => property.name + " ❤️");
+     return familyNames.sort();
+}
+
+console.log(familyNamesSorted(allFamilyMembers666));
+
+const sortFamilyAge = (family) => {
+    const familyAges = family.map(property => property.age);
+    const sortArrayFunction = (a, b) => a - b;
+    return familyAges.sort(sortArrayFunction);
+};
+
+console.log(sortFamilyAge(allFamilyMembers666));
 
 
 
