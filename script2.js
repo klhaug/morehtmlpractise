@@ -4,7 +4,7 @@
 //ARRAYS & OBECTS
 
 
-let array1 = [111,2,3,4,5,6,7,8,10,2,13,145,5,34,4,];
+let array1 = [111,2,300,4,5,600,7,8,101,232,13,145,5,34,4,];
 array1;
 let array2 = [5,2,5,3,4,6,4,5,8,9,3,5,7,34,4,];
 
@@ -104,15 +104,63 @@ const totalNumberArray1 = array1.reduce((accumulator, number) => {
 
 totalNumberArray1
 
+const arrayOverHundred = array1.filter(number => number > 100)
+const sortFunctionArray = (a, b) => a - b
+arrayOverHundred.sort(sortFunctionArray)
+arrayOverHundred
+
+const arrayTimesThousand = arrayOverHundred.map(number => number*1000);
+arrayTimesThousand
+
+const totalArrayTimesThousand = arrayTimesThousand.reduce((accumulator, number) => {
+    return accumulator + number;
+}, 0);
+totalArrayTimesThousand
 
 
+// 1. Using map:
+// Exercise 1: Given an array of numbers, return a new array where each number is doubled.
+// Exercise 2: Given an array of strings, return a new array with the first letter of each string capitalized.
+// 2. Using filter:
+// Exercise 1: Given an array of numbers, return a new array with only the even numbers.
+// Exercise 2: Given an array of strings, return a new array with strings that contain more than 5 characters.
+// 3. Using reduce:
+// Exercise 1: Given an array of numbers, find the sum of all the numbers.
+// Exercise 2: Given an array of numbers, find the maximum number.
 
 
+let array4 = [1,5,3,2,6,4,2,67,3,4,65];
+const doubledArray = array4.map(number => number*2);
+doubledArray
+
+let stringArray = ["lolol", "hehehee", "tralalal", "this is not capitalised"];
+const capitalisedStringArray = stringArray.map(string => string.charAt(0).toUpperCase() + string.slice(1));
+console.log(capitalisedStringArray);
+
+const evenArray = array4.filter(number => {
+    return number / 2
+})
+
+evenArray
+
+const filteredStringArray = stringArray.filter(string => string.length > 5);
+filteredStringArray;
+
+const array4Sum = array4.reduce((accumulator, number) => {
+    return accumulator + number;
+}, 0);
+
+array4Sum;
+
+const highestNumberArray4 = array4.reduce((accumulator, number) => {
+    if (accumulator < number) {
+        accumulator = number
+        return accumulator
+    }
+}, 0)
 
 
-
-
-
+highestNumberArray4
 
 
 
