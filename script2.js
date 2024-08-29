@@ -246,6 +246,7 @@ console.log(Object.entries(ourPlants[0][0]));
 const insidePlantObjects = (ourPlants[0].map(flowerArray => flowerArray));
 
 
+
 let obj = {
     username0 : "kristian",
     username1 : "anniken",
@@ -262,7 +263,15 @@ flatObjEntries
 
 
 
+let newObject = objEntries.map(property => {
+    return property[1] + property[0].replace('username', '');
+})
 
+newObject
+
+
+const flatPlants = insidePlants.map(index => Object.values(index));
+flatPlants
 
 
 
