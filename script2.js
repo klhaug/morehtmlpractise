@@ -220,13 +220,13 @@ let outsidePlants = [roseBush, oakTree, lavender, sunflower, mapleTree];
 let ourPlants = [insidePlants, outsidePlants];
 console.log(ourPlants)
 
-const insidePlantsNames = insidePlants.map(property => property.plant)
-insidePlantsNames
-const insidePlantsNamesSorted = insidePlantsNames.sort()
-insidePlantsNamesSorted
-console.log(insidePlantsNamesSorted[1].length)
-const insidePlantsNamesLongest = insidePlantsNamesSorted.reduce((accumulator, name) => name.length > accumulator.length ? name : accumulator, insidePlantsNamesSorted[0]);
-insidePlantsNamesLongest
+    const insidePlantsNames = insidePlants.map(property => property.plant)
+    insidePlantsNames
+    const insidePlantsNamesSorted = insidePlantsNames.sort()
+    insidePlantsNamesSorted
+    console.log(insidePlantsNamesSorted[1].length)
+    const insidePlantsNamesLongest = insidePlantsNamesSorted.reduce((accumulator, name) => name.length > accumulator.length ? name : accumulator, insidePlantsNamesSorted[0]);
+    insidePlantsNamesLongest
 
 let a = insidePlants.includes(snakePlant)
 console.log(a)
@@ -241,11 +241,24 @@ let anonymousNumber = slicedNumber.padEnd(cardNumber.length, "*")
 anonymousNumber
 
 
-console.log(Object.values(mapleTree))
+
+console.log(Object.entries(ourPlants[0][0]));
+const insidePlantObjects = (ourPlants[0].map(flowerArray => flowerArray));
 
 
+let obj = {
+    username0 : "kristian",
+    username1 : "anniken",
+    username2 : "louis",
+}
 
+let objValues = Object.values(obj);
+let objEntries = Object.entries(obj);
+objValues
 
+objEntries
+let flatObjEntries = objEntries.flat()
+flatObjEntries
 
 
 
