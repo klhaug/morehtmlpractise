@@ -4,81 +4,248 @@
 //ARRAYS & OBECTS
 
 
-let array1 = [1,2,3,4,5,6,4,3,4,5,3,3,2,1,1,2,3,4,5,2,3,10,10,10,12,12];
+let array1 = [111,2,3,4,5,6,7,8,10,2,13,145,5,34,4,];
+array1;
+let array2 = [5,2,5,3,4,6,4,5,8,9,3,5,7,34,4,];
 
-let array2 = [7,7,7,7,7,5,5,5,5,5,9,9,9,9];
+array1.shift();
+array1;
 
+array1.pop();
+array1;
 
-const sortArray = (a,b) => a - b;
+array1.splice(4,1);
+array1;
 
-
-// for (let i = 0; i < array1.length; i++) {
-//     console.log(array1[i] + 0.2);
-// }
-
-let object1 = {
-    navn: "Kristian",
-    alder: 27,
-    kjønn: "Mænn",
-}
-
+let array3 = array1.concat(array2);
+array3;
 
 let familyMember = {
     navn: "",
-    alder: undefined, 
-    kjønn: "",
-}
+    alder: undefined,
+    kjønn: undefined,
+};
+
+familyMember;
 
 let kristianHaug = {...familyMember};
-kristianHaug.navn = "Kristian Haug";
-kristianHaug.alder = 27
-kristianHaug.kjønn = "Mænn"
+kristianHaug;
+
+kristianHaug.alder = 27;
+kristianHaug.navn = "Kristian";
+kristianHaug.kjønn = "Mænn";
+
 kristianHaug;
 
 let annikenLindbak = {...familyMember};
-annikenLindbak.navn = "Anniken Lindbak";
+annikenLindbak.navn = "Anniken";
 annikenLindbak.alder = 30;
 annikenLindbak.kjønn = "Lady";
+
 annikenLindbak;
 
 let louisCat = {...familyMember};
 louisCat.navn = "Louis";
 louisCat.alder = 0.1;
 louisCat.kjønn = "Cat";
-louisCat
+
+louisCat;
 
 let allFamilyMembers = [kristianHaug, annikenLindbak, louisCat];
-allFamilyMembers
+
+allFamilyMembers;
+
+//MAP
+
+const allFamilyMembersAge = allFamilyMembers.map((property) => property.alder);
+
+// Gjør noe med accumulator for å regne totalalderen?
+
+console.log("I var familie er alderen " + allFamilyMembersAge);
 
 
-for (let i = 0; i < allFamilyMembers.length; i++) {
-console.log(allFamilyMembers[i].navn + " er " + allFamilyMembers[i].alder + " år!")
-}
+//FILTER
 
-let name = 'jon snow'
+const allFamilyMembersAdults = allFamilyMembersAge.filter(age => age > 18);
 
-let obj = {
-    [name]: "hello",
-    ['ray' + ' smith']: "hihi"
-}
 
-obj
+console.log("I var familie er de voksne " + allFamilyMembersAdults)
 
-console.log(obj['jon snow']);
-console.log(obj['ray smith']);
 
-const name2 = "Kristian"
-const alder = 34;
-const pet = "cat";
+const allFamilyMembersAdults2 = allFamilyMembers.filter(property => property.alder > 18)
+const adultNames = allFamilyMembersAdults2.map(property=> property.navn);
+const adultAges = allFamilyMembersAdults2.map(property => property.alder)
+console.log(allFamilyMembersAdults2)
 
-const greetingBest = `Hello ${name2} you seem to be of age ${alder}. What a lovely ${pet} you have!`;
 
-greetingBest
+console.log(`De voksne i vår familie er ${adultNames[0]} og ${adultNames[1]}. De er ${adultAges[0]} og ${adultAges[1]} år gamle. `)
 
-const greetingFunction = (name2=``, alder=30, pet=`cat`) => {
-    `Hello ${name2} you seem to be of age ${alder}. What a lovely ${pet} you have!`;
-}
-greetingFunction();
+
+
+
+//REDUCE
+
+const totalAgeAllFamilyMembers = allFamilyMembers.reduce((accumulator, num) => {
+    return accumulator + num.alder
+}, 0)
+
+totalAgeAllFamilyMembers;
+
+
+const allFamilyMembersNamesInOne = allFamilyMembers.reduce((accumulator, property) => {
+    return accumulator + " " + property.navn
+}, "Våre navn er");
+
+allFamilyMembersNamesInOne
+
+const totalNumberArray1 = array1.reduce((accumulator, number) => {
+    return accumulator + number
+}, 0);
+
+totalNumberArray1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let array1 = [1,2,3,4,5,6,4,3,4,5,3,3,2,1,1,2,3,4,5,2,3,10,10,10,12,12];
+
+// let array2 = [7,7,7,7,7,5,5,5,5,5,9,9,9,9];
+
+
+// const sortArray = (a,b) => a - b;
+
+
+// // for (let i = 0; i < array1.length; i++) {
+// //     console.log(array1[i] + 0.2);
+// // }
+
+// // let object1 = {
+// //     navn: "Kristian",
+// //     alder: 27,
+// //     kjønn: "Mænn",
+// // }
+
+
+// // let familyMember = {
+// //     navn: "",
+// //     alder: undefined, 
+// //     kjønn: "",
+// // }
+
+// // let kristianHaug = {...familyMember};
+// // kristianHaug.navn = "Kristian Haug";
+// // kristianHaug.alder = 27
+// // kristianHaug.kjønn = "Mænn"
+// // kristianHaug;
+
+// // let annikenLindbak = {...familyMember};
+// // annikenLindbak.navn = "Anniken Lindbak";
+// // annikenLindbak.alder = 30;
+// // annikenLindbak.kjønn = "Lady";
+// // annikenLindbak;
+
+// // let louisCat = {...familyMember};
+// // louisCat.navn = "Louis";
+// // louisCat.alder = 0.1;
+// // louisCat.kjønn = "Cat";
+// // louisCat
+
+// // let allFamilyMembers = [kristianHaug, annikenLindbak, louisCat];
+// // allFamilyMembers
+
+
+// // for (let i = 0; i < allFamilyMembers.length; i++) {
+// // console.log(allFamilyMembers[i].navn + " er " + allFamilyMembers[i].alder + " år!")
+// // }
+
+// // let name = 'jon snow'
+
+// // let obj = {
+// //     [name]: "hello",
+// //     ['ray' + ' smith']: "hihi"
+// // }
+
+// // obj
+
+// // console.log(obj['jon snow']);
+// // console.log(obj['ray smith']);
+
+// // const name2 = "Kristian"
+// // const alder = 34;
+// // const pet = "cat";
+
+// // const greetingBest = `Hello ${name2} you seem to be of age ${alder}. What a lovely ${pet} you have!`;
+
+// // greetingBest
+
+// // const greetingFunctionKristian = (name2=``, alder=30, pet=`cat`) => `Hello ${name2}, you seem to be of age ${alder}. What a lovely ${pet} you have!`;
+// // console.log(greetingFunctionKristian("Kristian", 340, "dog"));
+
+// // allFamilyMembers[0].greeting = greetingFunctionKristian;
+// // console.log(allFamilyMembers[0].greeting("Kristian", 20, "dog"))
+
+// // const greetingFunctionAnniken = (name=``, alder=30, pet=`cat`) => `Jammen såå godt å se deg ${name}, gratulerer så mye med å ha blitt ${alder}! Hvordan står det til med ${pet}en?`;
+// // allFamilyMembers[1].greeting = greetingFunctionAnniken
+// // const annikenOLindbak = allFamilyMembers[1];
+// // console.log(annikenOLindbak.greeting("Louis", 1, "hund"));
+
+
+// // const greetingFunctionLouis = (sound = ``, move =``, clawattack = 99) => `Louis ${sound}, Louis ${move}, Louis att ${clawattack} times!!!`;
+// // console.log(greetingFunctionLouis("purr", "run", 420));
+
+// // allFamilyMembers[2].greeting = greetingFunctionLouis;
+
+// // for (let i = 0; i<allFamilyMembers.length; i++) {
+// //     console.log(allFamilyMembers[i]);
+// // }
+
+
 
 
 
